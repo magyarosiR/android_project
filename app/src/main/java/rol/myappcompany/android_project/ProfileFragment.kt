@@ -1,4 +1,4 @@
-package rol.myappcompany.quiz
+package rol.myappcompany.android_project
 
 import android.os.Bundle
 import android.util.Log
@@ -24,12 +24,11 @@ class ProfileFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_profile, container, false)
         val updateButton = view.findViewById<Button>(R.id.btn_update)
 
+        Log.d("onclick elott","onclick elott")
 
         updateButton?.setOnClickListener { view ->
-            Log.d("elotte", "elotte")
             val fragment = ProfileUpdateFragment()
             val transaction = activity?.supportFragmentManager?.beginTransaction()
-            Log.d("asd", "asd")
             transaction?.replace(R.id.content_fragment, fragment)
             transaction?.disallowAddToBackStack()
             transaction?.commit()
@@ -37,9 +36,6 @@ class ProfileFragment : Fragment() {
         return view
     }
 
-
-    }
-
-
+}
 
 

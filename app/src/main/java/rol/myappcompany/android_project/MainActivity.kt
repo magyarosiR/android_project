@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import rol.myappcompany.quiz.ProfileFragment
+import rol.myappcompany.android_project.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
                     profileFragment = ProfileFragment()
                     supportFragmentManager
                             .beginTransaction()
-                            .replace(R.id.frame_layout, profileFragment)
                             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                            .replace(R.id.frame_layout, profileFragment)
                             .commit()
                 }
             }
