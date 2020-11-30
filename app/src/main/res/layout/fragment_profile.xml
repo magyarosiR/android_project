@@ -16,12 +16,15 @@
 
     </TextView>
 
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_profile"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="344dp"
-        android:text="@string/update"></Button>
+        android:text="@string/update"
+        android:id="@+id/btn_update"></Button>
 
 </RelativeLayout>
