@@ -11,11 +11,7 @@
         android:layout_height="wrap_content"
         android:text="@string/profile"
         android:textSize="30sp"
-        android:textColor="@color/white"
-        android:id="@+id/text_profile">
-
-    </TextView>
-
+        android:id="@+id/text_profile"/>
 
 
     <Button

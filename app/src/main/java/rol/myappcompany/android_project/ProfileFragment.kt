@@ -29,7 +29,7 @@ class ProfileFragment : Fragment() {
         updateButton?.setOnClickListener { view ->
             val fragment = ProfileUpdateFragment()
             val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(R.id.content_fragment, fragment)
+            transaction?.replace(R.id.frame_layout, fragment)
             transaction?.disallowAddToBackStack()
             transaction?.commit()
         }

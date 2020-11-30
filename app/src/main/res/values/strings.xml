@@ -5,5 +5,11 @@
     <string name="update">Update</string>
     <string name="profile">Profile:</string>
     <string name="valami">VAAMAIAIISDADs:</string>
+    <string name="insert">Insert</string>
+    <string name="email_adress">Email adress:</string>
+    <string name="phone_number">Phone number:</string>
+    <string name="home_adress">Home adress:</string>
+    <string name="name">Name</string>
+    <string name="manage_your_profile">Manage your profile:</string>
 
 </resources>

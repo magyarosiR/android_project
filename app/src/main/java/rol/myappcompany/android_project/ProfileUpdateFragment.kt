@@ -30,8 +30,14 @@ class ProfileUpdateFragment : Fragment() {
 
         val view: View = inflater.inflate(R.layout.fragment_profile_update, container, false)
 
-        val valami: TextView = view?.findViewById<TextView>(R.id.valami)
+        //val valami: TextView = view?.findViewById<TextView>(R.id.valami)
+        val instertButton: Button = view.findViewById<Button>(R.id.btn_insert)
 
+        instertButton.setOnClickListener {
+        
+
+
+        }
         return view
     }
 
