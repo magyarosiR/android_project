@@ -4,10 +4,11 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import android.widget.Toast
 
 val DATABASE_NAME = "ProfileDB"
-val TABLE_NAME = "Profile"
+val TABLE_NAME = "Profiles"
 val COL_NAME = "name"
 val COL_ADRESS = "adress"
 val COL_PHONE_NUMBER = "phone_number"
@@ -20,12 +21,13 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
 
         val createTable = "CREATE TABLE " + TABLE_NAME +" (" +
                 COL_ID +" INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COL_NAME + " VARCHAR(256)," +
-                COL_ADRESS + " VARCHAR(256)," +
-                COL_PHONE_NUMBER + " INTEGER" +
-                COL_EMAIL + " VARCHAR(256))"
+                COL_NAME + " TEXT," +
+                COL_ADRESS + " TEXT," +
+                COL_PHONE_NUMBER + " INTEGER," +
+                COL_EMAIL + " TEXT)"
 
         db?.execSQL(createTable)
+        Log.d("utana", "utana")
 
     }
 
