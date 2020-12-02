@@ -13,4 +13,7 @@ class Profile {
         this.phone_number = phone_number
         this.email = email
     }
+    constructor(){
+
+    }
 }

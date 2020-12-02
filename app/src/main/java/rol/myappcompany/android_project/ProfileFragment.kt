@@ -24,7 +24,7 @@ class ProfileFragment : Fragment() {
         val view : View = inflater.inflate(R.layout.fragment_profile, container, false)
         val updateButton = view.findViewById<Button>(R.id.btn_update)
 
-        Log.d("onclick elott","onclick elott")
+        val profileResuls = view.findViewById<TextView>(R.id.text_results_profile)
 
         updateButton?.setOnClickListener { view ->
             val fragment = ProfileUpdateFragment()
@@ -33,6 +33,22 @@ class ProfileFragment : Fragment() {
             transaction?.disallowAddToBackStack()
             transaction?.commit()
         }
+
+        var db = context?.let { DataBaseHandler(context = it) }
+
+        //read the data to the profile screen
+        var data = db?.readData()
+        profileResuls.text = ""
+        if (data != null) {
+            for (i in 0..(data.size-1)) {
+                profileResuls.append("\nName: " + data.get(i).name + "\n\nAdress: "
+                        + data.get(i).adress + "\n\nPhone Number:  " + data.get(i).phone_number + "\n\nEmail:  " + data.get(i).email + '\n')
+            }
+        }
+        if(profileResuls.text == "") {
+            profileResuls.append("You don't have any data yet. \n\n Please update your profile!")
+        }
+
         return view
     }
 

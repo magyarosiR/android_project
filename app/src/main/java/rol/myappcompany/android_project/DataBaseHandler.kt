@@ -1,4 +1,4 @@
-package rol.myappcompany.android_project
+ package rol.myappcompany.android_project
 
 import android.content.ContentValues
 import android.content.Context
@@ -47,5 +47,38 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
             Toast.makeText(context,"Failed",Toast.LENGTH_SHORT).show()
         else
             Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context,profile.name,Toast.LENGTH_SHORT).show()
     }
+
+     fun readData() : MutableList<Profile>{
+         var list : MutableList<Profile> = ArrayList()
+
+         val db = this.readableDatabase
+         val query = "SELECT * FROM " + TABLE_NAME
+         val result = db.rawQuery(query,null)
+         if(result.moveToFirst()){
+             do {
+                 var profile = Profile()
+                 profile.id = result.getString(result.getColumnIndex(COL_ID)).toInt()
+                 profile.name = result.getString(result.getColumnIndex(COL_NAME))
+                 profile.adress = result.getString(result.getColumnIndex(COL_ADRESS))
+                 profile.email = result.getString(result.getColumnIndex(COL_EMAIL))
+                 profile.phone_number = result.getString(result.getColumnIndex(COL_PHONE_NUMBER)).toInt()
+                 list.add(profile)
+             }while (result.moveToNext())
+         }
+
+         result.close()
+         db.close()
+         return list
+     }
+
+    fun deleteData(){
+        val db = this.writableDatabase
+        db.delete(TABLE_NAME,null,null)
+        db.close()
+    }
+
+
 }
+
