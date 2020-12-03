@@ -24,6 +24,13 @@
         android:layout_above="@+id/btm_nav"
         >
 
+        <TextView
+            android:id="@+id/text_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome!"
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
     </com.google.android.material.circularreveal.CircularRevealFrameLayout>
 

@@ -10,6 +10,7 @@ import rol.myappcompany.android_project.ProfileFragment
 class MainActivity : AppCompatActivity() {
 
     lateinit var profileFragment: ProfileFragment
+    lateinit var restaurantsFragment: RestaurantsFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,14 @@ class MainActivity : AppCompatActivity() {
                             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                             .replace(R.id.frame_layout, profileFragment)
                             .commit()
+                }
+                R.id.btn_main_screen -> {
+                    restaurantsFragment = RestaurantsFragment()
+                    supportFragmentManager
+                        .beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .replace(R.id.frame_layout, restaurantsFragment)
+                        .commit()
                 }
             }
             true
