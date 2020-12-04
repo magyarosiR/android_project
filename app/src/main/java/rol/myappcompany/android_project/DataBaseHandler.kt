@@ -14,6 +14,7 @@ val COL_ADRESS = "adress"
 val COL_PHONE_NUMBER = "phone_number"
 val COL_EMAIL = "email"
 val COL_ID = "id"
+//val COL_IMG = "img"
 
 class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, 1) //NULL VALUE IS THE CURSOR FACTORY
 {
@@ -24,7 +25,8 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
                 COL_NAME + " TEXT," +
                 COL_ADRESS + " TEXT," +
                 COL_PHONE_NUMBER + " INTEGER," +
-                COL_EMAIL + " TEXT)"
+                COL_EMAIL + " TEXT)"// +
+                //COL_IMG + " TEXT)"
 
         db?.execSQL(createTable)
         Log.d("utana", "utana")
@@ -42,6 +44,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
         cv.put(COL_ADRESS,profile.adress)
         cv.put(COL_PHONE_NUMBER,profile.phone_number)
         cv.put(COL_EMAIL,profile.email)
+        //cv.put(COL_IMG,profile.img)
         var result = db.insert(TABLE_NAME,null,cv)
         if(result == -1.toLong())
             Toast.makeText(context,"Failed",Toast.LENGTH_SHORT).show()
@@ -64,6 +67,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
                  profile.adress = result.getString(result.getColumnIndex(COL_ADRESS))
                  profile.email = result.getString(result.getColumnIndex(COL_EMAIL))
                  profile.phone_number = result.getString(result.getColumnIndex(COL_PHONE_NUMBER)).toInt()
+                 //profile.img = result.getString(result.getColumnIndex(COL_IMG))
                  list.add(profile)
              }while (result.moveToNext())
          }

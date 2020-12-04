@@ -6,10 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -36,6 +33,7 @@ class ProfileUpdateFragment : Fragment() {
         val adressText: EditText = view.findViewById<EditText>(R.id.adress_id)
         val emailText: EditText = view.findViewById<EditText>(R.id.email_id)
         val phoneNumberText: EditText = view.findViewById<EditText>(R.id.phone_number_id)
+        val imgButton: ImageButton = view.findViewById<ImageButton>(R.id.imgbtn_instert)
 
         var db = context?.let { DataBaseHandler(context = it) }
 
@@ -49,6 +47,12 @@ class ProfileUpdateFragment : Fragment() {
                 db?.insertData(profile)
             }
         }
+
+        imgButton.setOnClickListener({
+
+
+
+        })
 
         instertButton.setOnClickListener({
             if(id>1){
