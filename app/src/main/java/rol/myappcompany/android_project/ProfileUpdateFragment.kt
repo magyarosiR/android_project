@@ -39,33 +39,24 @@ class ProfileUpdateFragment : Fragment() {
 
         var db = context?.let { DataBaseHandler(context = it) }
 
-        fun instert() {
+        fun insert() {
             if (nameText.text.toString().length > 0 &&
                     adressText.text.toString().length > 0 &&
                     phoneNumberText.text.toString().length > 0 &&
                     emailText.text.toString().length > 0) {
-                var profile = Profile(nameText.text.toString(), adressText.text.toString(), phoneNumberText.text.toString().toInt(), emailText.text.toString())
+                var profile = Profile(nameText.text.toString(), adressText.text.toString(), phoneNumberText.text.toString().toInt(), emailText.text.toString(),"")
 
                 db?.insertData(profile)
             }
         }
 
-
         instertButton.setOnClickListener({
             if(id>1){
                 db!!.deleteData()
-                instert()
-            }else{
-                instert()
             }
+            insert()
         })
-
-
         return view
     }
 
 }
-
-
-
-
