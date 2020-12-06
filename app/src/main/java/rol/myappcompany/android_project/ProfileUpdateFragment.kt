@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.Intent.ACTION_PICK
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
@@ -40,19 +41,28 @@ class ProfileUpdateFragment : Fragment() {
         var db = context?.let { DataBaseHandler(context = it) }
 
         fun insert() {
+            var data = db?.readData()
+            var imgUri = ""
+            if (data != null) {
+                for (i in 0..(data.size - 1)) {
+                    imgUri = data.get(i).img
+                    Log.d("imigyuri",imgUri)
+                }
+            }
+
             if (nameText.text.toString().length > 0 &&
                     adressText.text.toString().length > 0 &&
                     phoneNumberText.text.toString().length > 0 &&
                     emailText.text.toString().length > 0) {
-                var profile = Profile(nameText.text.toString(), adressText.text.toString(), phoneNumberText.text.toString().toInt(), emailText.text.toString(),"")
-
+                var profile = Profile(nameText.text.toString(), adressText.text.toString(), phoneNumberText.text.toString().toInt(), emailText.text.toString(),imgUri)
+                db!!.deleteData()
                 db?.insertData(profile)
             }
         }
 
         instertButton.setOnClickListener({
             if(id>1){
-                db!!.deleteData()
+                //db!!.deleteData()
             }
             insert()
         })
