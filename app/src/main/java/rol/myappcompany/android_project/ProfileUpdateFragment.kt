@@ -1,7 +1,11 @@
 package rol.myappcompany.android_project
 
 import android.content.Context
+import android.content.Intent
+import android.content.Intent.ACTION_PICK
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -26,14 +30,12 @@ class ProfileUpdateFragment : Fragment() {
 
         val view: View = inflater.inflate(R.layout.fragment_profile_update, container, false)
 
-        //val valami: TextView = view?.findViewById<TextView>(R.id.valami)
         val instertButton: Button = view.findViewById<Button>(R.id.btn_insert)
 
         val nameText: EditText = view.findViewById<EditText>(R.id.name_id)
         val adressText: EditText = view.findViewById<EditText>(R.id.adress_id)
         val emailText: EditText = view.findViewById<EditText>(R.id.email_id)
         val phoneNumberText: EditText = view.findViewById<EditText>(R.id.phone_number_id)
-        val imgButton: ImageButton = view.findViewById<ImageButton>(R.id.imgbtn_instert)
 
         var db = context?.let { DataBaseHandler(context = it) }
 
@@ -48,11 +50,6 @@ class ProfileUpdateFragment : Fragment() {
             }
         }
 
-        imgButton.setOnClickListener({
-
-
-
-        })
 
         instertButton.setOnClickListener({
             if(id>1){
@@ -62,6 +59,8 @@ class ProfileUpdateFragment : Fragment() {
                 instert()
             }
         })
+
+
         return view
     }
 
