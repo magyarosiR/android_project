@@ -29,7 +29,7 @@
                 android:transformPivotX="30dp"
                 android:transformPivotY="30dp"
                 android:layout_centerHorizontal="true"
-                ></ImageView>
+                />
 
             <TextView
                     android:id="@+id/text_results_profile"
@@ -49,7 +49,7 @@
                 android:layout_below="@+id/text_results_profile"
                 android:layout_marginTop="20dp"
                 android:text="Update your profile pic"
-                android:id="@+id/btn_update_profilepic"></Button>
+                android:id="@+id/btn_update_profilepic"/>
 
             <Button
                 android:layout_width="wrap_content"

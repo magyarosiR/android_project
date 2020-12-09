@@ -11,5 +11,8 @@
     <string name="home_adress">Home adress:</string>
     <string name="name">Name</string>
     <string name="manage_your_profile">Manage your profile:</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="sub_name">Sub name</string>
+    <string name="adress">Adress</string>
 
 </resources>

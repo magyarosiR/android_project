@@ -1,7 +1,6 @@
 package rol.myappcompany.android_project
 
 import android.content.Intent
-import android.media.Image
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -10,10 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import rol.myappcompany.android_project.R
-import java.lang.reflect.Array.newInstance
-import kotlin.reflect.typeOf
 
 
 class ProfileFragment : Fragment() {
@@ -71,7 +66,7 @@ class ProfileFragment : Fragment() {
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        val profilePicture = view!!.findViewById<ImageView>(R.id.profile_picture)
+        val profilePicture = requireView().findViewById<ImageView>(R.id.profile_picture)
 
         if (requestCode == 456) {
             profilePicture!!.setImageURI(data?.data)

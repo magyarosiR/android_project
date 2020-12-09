@@ -17,6 +17,7 @@
         android:layout_alignParentBottom="true"
         app:itemBackground="@color/white"
         app:menu="@menu/bottom_nav"/>
+
     <com.google.android.material.circularreveal.CircularRevealFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,13 +25,13 @@
         android:layout_above="@+id/btm_nav"
         >
 
-        <TextView
-            android:id="@+id/text_welcome"
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Welcome!"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+            android:layout_height="match_parent"/>
+            <!--app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" -->
 
     </com.google.android.material.circularreveal.CircularRevealFrameLayout>
 

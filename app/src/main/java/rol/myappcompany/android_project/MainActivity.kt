@@ -1,17 +1,12 @@
 
 package rol.myappcompany.android_project
 
-import android.content.Intent
-import android.graphics.Bitmap
-import android.net.Uri
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Environment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import rol.myappcompany.android_project.ProfileFragment
-import java.io.File
-import java.io.FileOutputStream
+
 
 class MainActivity : AppCompatActivity() {
 
