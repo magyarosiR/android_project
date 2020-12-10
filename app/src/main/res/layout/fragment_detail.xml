@@ -8,13 +8,13 @@
     <data>
         <variable
             name="viewModel"
-            type="rol.myappcompany.android_project.DetailFragment" />
+            type="rol.myappcompany.android_project.restaurants.DetailFragment" />
     </data>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DetailFragment">
+        tools:context=".restaurants.DetailFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

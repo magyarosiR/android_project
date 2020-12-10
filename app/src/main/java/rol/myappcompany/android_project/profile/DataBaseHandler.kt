@@ -1,13 +1,13 @@
- package rol.myappcompany.android_project
+ package rol.myappcompany.android_project.profile
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
 import android.widget.Toast
+import rol.myappcompany.android_project.profile.Profile
 
-val DATABASE_NAME = "ProfileDB"
+ val DATABASE_NAME = "ProfileDB"
 val TABLE_NAME = "Profiles"
 val COL_NAME = "name"
 val COL_ADRESS = "adress"

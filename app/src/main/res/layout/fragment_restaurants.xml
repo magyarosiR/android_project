@@ -9,7 +9,7 @@
     <data>
         <variable
             name="viewModel"
-            type="rol.myappcompany.android_project.RestaurantsViewModel" />
+            type="rol.myappcompany.android_project.restaurants.RestaurantsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

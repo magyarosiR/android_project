@@ -1,4 +1,4 @@
-package rol.myappcompany.android_project
+package rol.myappcompany.android_project.profile
 
 class Profile {
     var id = 0

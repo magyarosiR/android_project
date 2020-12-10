@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/overviewFragment"
-        tools:context=".RestaurantsFragment"
+        tools:context=".restaurants.RestaurantsFragment"
         android:label="fragment_overview"
         tools:layout="@layout/fragment_restaurants" >
         <action
