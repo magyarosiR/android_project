@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import rol.myappcompany.android_project.databinding.CustomListBinding
 
 import rol.myappcompany.android_project.databinding.FragmentRestaurantsBinding
 
@@ -23,7 +24,7 @@ class   RestaurantsFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View {
         //val view : View = inflater.inflate(R.layout.fragment_restaurants, container, false)
-        val binding = FragmentRestaurantsBinding.inflate(inflater)
+        val binding = CustomListBinding.inflate(inflater)
 
 
         binding.lifecycleOwner = this

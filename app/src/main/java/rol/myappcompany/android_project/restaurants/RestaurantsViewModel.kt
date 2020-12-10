@@ -13,11 +13,16 @@ import rol.myappcompany.android_project.model.Reqres
 import rol.myappcompany.android_project.model.Restaurants
 
 class RestaurantsViewModel: ViewModel() {
-    private val _response = MutableLiveData<String>()
+    private val _status = MutableLiveData<String>()
 
     val response: LiveData<String>
-    get() = _response
+    get() = _status
 
+    private val _property = MutableLiveData<Restaurants>()
+
+    val property: LiveData<Restaurants>
+
+    get() = _property
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main )
 
@@ -32,9 +37,11 @@ class RestaurantsViewModel: ViewModel() {
             var getPropertiesDeferred = RestaurantsApi.retrofitService.getProperties()
             try {
                 var listResult = getPropertiesDeferred.await()
-                _response.value = "Success: ${listResult.restaurants.size} Mars properties retrieved"
+                if (listResult.restaurants.size > 0) {
+                    _property.value = listResult.restaurants[0]
+                }
             } catch (e: Exception) {
-                _response.value = "Failure: ${e.message}"
+                _status.value = "Failure: ${e.message}"
             }
         }
 
