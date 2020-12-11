@@ -1,11 +1,20 @@
-package rol.myappcompany.android_project.restaurants
+package rol.myappcompany.android_project.model.restaurants
 
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import rol.myappcompany.android_project.R
+import rol.myappcompany.android_project.model.Restaurants
+import rol.myappcompany.android_project.restaurants.PhotoGridAdapter
+
+@BindingAdapter("listData")
+fun bindRecyclerView(recyclerView: RecyclerView, data: List<Restaurants>?) {
+    val adapter = recyclerView.adapter as PhotoGridAdapter
+    adapter.submitList(data)
+}
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
