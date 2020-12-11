@@ -1,21 +1,25 @@
 package rol.myappcompany.android_project.model
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Restaurants(
-        val address: String,
-        val area: String,
-        val city: String,
-        val country: String,
+        val address: String?,
+        val area: String?,
+        val city: String?,
+        val country: String?,
         val id: Int,
-        @Json(name = "image_url") val ImgSrcUrl: String,
+        @Json(name = "image_url") val ImgSrcUrl: String?,
         val lat: Double,
         val lng: Double,
-        val mobile_reserve_url: String,
-        val name: String,
-        val phone: String,
-        val postal_code: String,
+        val mobile_reserve_url: String?,
+        val name: String?,
+        val phone: String?,
+        val postal_code: String?,
         val price: Int,
-        val reserve_url: String,
-        val state: String
-)
+        val reserve_url: String?,
+        val state: String?
+):Parcelable
