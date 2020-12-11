@@ -9,10 +9,12 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import rol.myappcompany.android_project.model.Restaurants
 
-class RestaurantsViewModel: ViewModel() {
-    private val _status = MutableLiveData<String>()
+enum class ApiStatus{LOADING, ERROR, DONE}
 
-    val status: LiveData<String>
+class RestaurantsViewModel: ViewModel() {
+    private val _status = MutableLiveData<ApiStatus>()
+
+    val status: LiveData<ApiStatus>
     get() = _status
 
     private val _properties = MutableLiveData<List<Restaurants>>()
@@ -33,12 +35,14 @@ class RestaurantsViewModel: ViewModel() {
         coroutineScope.launch {
             var getPropertiesDeferred = RestaurantsApi.retrofitService.getProperties()
             try {
-                var listResult = getPropertiesDeferred.await()
-                if (listResult.restaurants.size > 0) {
-                    _properties.value = listResult.restaurants
-                }
+                _status.value = ApiStatus.LOADING
+
+                val listResult =  getPropertiesDeferred.await()
+                _status.value = ApiStatus.DONE
+                _properties.value = listResult.restaurants
             } catch (e: Exception) {
-                _status.value = "Failure: ${e.message}"
+                _status.value = ApiStatus.ERROR
+                _properties.value = ArrayList()
             }
         }
 

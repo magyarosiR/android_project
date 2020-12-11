@@ -32,6 +32,8 @@ class   RestaurantsFragment : Fragment() {
 
         binding.photosRyc.adapter = PhotoGridAdapter()
         setHasOptionsMenu(true)
+
+
         return binding.root
         //return view
     }
