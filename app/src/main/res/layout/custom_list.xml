@@ -23,7 +23,7 @@
     <data>
         <variable
             name="viewModel"
-            type="rol.myappcompany.android_project.restaurants.RestaurantsViewModel" />
+            type="rol.myappcompany.android_project.model.Restaurants" />
     </data>
     <ImageView
         android:id="@+id/mars_image"
