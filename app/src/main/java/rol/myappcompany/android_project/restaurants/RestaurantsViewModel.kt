@@ -22,6 +22,11 @@ class RestaurantsViewModel: ViewModel() {
     val properties: LiveData<List<Restaurants>>
     get() = _properties
 
+    private val _navigateToSelectedProperty = MutableLiveData<Restaurants>()
+
+    val navigateToSelectedProperty: LiveData<Restaurants>
+        get() = _navigateToSelectedProperty
+
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main )
 
@@ -39,7 +44,7 @@ class RestaurantsViewModel: ViewModel() {
 
                 val listResult =  getPropertiesDeferred.await()
                 _status.value = ApiStatus.DONE
-                _properties.value = listResult.restaurants
+                    _properties.value = listResult.restaurants
             } catch (e: Exception) {
                 _status.value = ApiStatus.ERROR
                 _properties.value = ArrayList()
@@ -52,6 +57,14 @@ class RestaurantsViewModel: ViewModel() {
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
+    }
+
+    fun displayPropertyDetails(rest: Restaurants) {
+        _navigateToSelectedProperty.value = rest
+    }
+
+    fun displayPropertyDetailsComplete() {
+        _navigateToSelectedProperty.value = null
     }
 }
 

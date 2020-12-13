@@ -9,7 +9,7 @@ import rol.myappcompany.android_project.databinding.CustomListBinding
 import rol.myappcompany.android_project.model.Restaurants
 
 
-class PhotoGridAdapter:
+class PhotoGridAdapter(private val onClickListener: OnClickListener):
         ListAdapter<Restaurants, PhotoGridAdapter.RestaurantsViewHolder>(DiffCallback) {
 
     class RestaurantsViewHolder(private var binding: CustomListBinding):
@@ -47,9 +47,9 @@ class PhotoGridAdapter:
      */
     override fun onBindViewHolder(holder: RestaurantsViewHolder, position: Int) {
         val rest = getItem(position)
-        /*holder.itemView.setOnClickListener {
+        holder.itemView.setOnClickListener {
             onClickListener.onClick(rest)
-        }*/
+        }
         holder.bind(rest)
     }
 
@@ -58,7 +58,7 @@ class PhotoGridAdapter:
      * associated with the current item to the [onClick] function.
      * @param clickListener lambda that will be called with the current [MarsProperty]
      */
-    /*class OnClickListener(val clickListener: (rest: Restaurants) -> Unit) {
+    class OnClickListener(val clickListener: (rest: Restaurants) -> Unit) {
         fun onClick(rest:Restaurants) = clickListener(rest)
-    }*/
+    }
 }

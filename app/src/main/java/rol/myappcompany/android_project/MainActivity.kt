@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.frame_layout, restaurantsFragment)
                         .commit()
                 }
+
             }
             true
 
