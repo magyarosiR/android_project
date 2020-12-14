@@ -4,7 +4,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/ocean_blur"
     >
     <data>
         <variable
@@ -36,7 +35,7 @@
             android:layout_marginTop="2dp"
             android:layout_toEndOf="@id/mars_image"
             android:text="@{property.name}"
-            android:textColor="#de000000"
+            android:textColor="@color/black"
             android:textSize="27sp"
             android:textStyle="bold"
             tools:text="Name" />

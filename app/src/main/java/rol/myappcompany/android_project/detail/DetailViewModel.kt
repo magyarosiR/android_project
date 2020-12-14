@@ -1,6 +1,8 @@
 package rol.myappcompany.android_project.detail
 
 import android.app.Application
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -17,4 +19,6 @@ class DetailViewModel(rest: Restaurants, app: Application): AndroidViewModel(app
     init {
         _selectedProperty.value = rest
     }
+
+
 }
