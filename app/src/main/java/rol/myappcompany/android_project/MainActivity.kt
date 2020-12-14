@@ -2,8 +2,9 @@
 package rol.myappcompany.android_project
 
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import rol.myappcompany.android_project.profile.ProfileFragment
@@ -32,14 +33,19 @@ class MainActivity : AppCompatActivity() {
                             .commit()
                 }
                 R.id.btn_main_screen -> {
-                    restaurantsFragment = RestaurantsFragment()
+                    /*for (fragment in supportFragmentManager.fragments) {
+                        supportFragmentManager.beginTransaction().remove(fragment).commit()
+                    }*/
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    startActivity(intent)
+                    /*restaurantsFragment = RestaurantsFragment()
                     supportFragmentManager
                         .beginTransaction()
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .replace(R.id.frame_layout, restaurantsFragment)
-                        .commit()
+                        .commit()*/
                 }
-
             }
             true
 

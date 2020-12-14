@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile.ProfileUpdateFragment"
-    android:background="@drawable/blur"
+    android:background="@drawable/ocean_blur"
     android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
@@ -58,6 +58,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/insert"
+                            android:textColor="@color/white"
                             android:layout_margin="10dp"
                             android:padding="10dp"
                             />

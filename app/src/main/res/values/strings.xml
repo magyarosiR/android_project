@@ -14,5 +14,6 @@
     <string name="restaurant_name">Restaurant Name</string>
     <string name="sub_name">Sub name</string>
     <string name="adress">Adress</string>
+    <string name="todo">TODO</string>
 
 </resources>

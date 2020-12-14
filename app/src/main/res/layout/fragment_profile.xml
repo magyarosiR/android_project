@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile.ProfileUpdateFragment"
-    android:background="@drawable/blur"
+    android:background="@drawable/ocean_blur"
     android:orientation="vertical">
 
     <TextView
@@ -48,6 +48,7 @@
                 android:layout_below="@+id/text_results_profile"
                 android:layout_marginTop="20dp"
                 android:text="Update your profile pic"
+                android:textColor="@color/white"
                 android:id="@+id/btn_update_profilepic"/>
 
             <Button
@@ -55,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/btn_update_profilepic"
                 android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
                 android:text="Update your data"
                 android:id="@+id/btn_update" />
         </LinearLayout>
