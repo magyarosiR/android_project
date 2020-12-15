@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import rol.myappcompany.android_project.R
 import rol.myappcompany.android_project.databinding.FragmentDetailBinding
@@ -37,8 +38,24 @@ class DetailFragment : Fragment() {
             startActivity(mapIntent)
         })
 
+        binding.btnTelephone.setOnClickListener({
+            val number = rest.phone
+            number?.let { it1 -> makePhoneCall(it1) }
+
+
+        })
+
+
+
 
         return binding.root
+    }
+    fun makePhoneCall(number: String) : Boolean {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.setData(Uri.parse("tel:$number"))
+            startActivity(intent)
+            return true
+
     }
 
 }
