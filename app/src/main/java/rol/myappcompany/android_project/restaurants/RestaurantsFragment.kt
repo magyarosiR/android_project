@@ -45,6 +45,7 @@ class   RestaurantsFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
+
         return binding.root
         //return view
     }

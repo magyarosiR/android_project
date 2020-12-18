@@ -4,9 +4,14 @@ package rol.myappcompany.android_project
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import rol.myappcompany.android_project.model.Restaurants
 import rol.myappcompany.android_project.profile.ProfileFragment
 import rol.myappcompany.android_project.restaurants.RestaurantsFragment
 
@@ -21,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val bottomNavitagion: BottomNavigationView = findViewById(R.id.btm_nav)
+
+
+        val arrayList = ArrayList<List<Restaurants>>()
+
+        Log.d("ASD", arrayList.toString())
 
         bottomNavitagion.setOnNavigationItemSelectedListener { item ->
             when (item.itemId){
@@ -50,6 +60,41 @@ class MainActivity : AppCompatActivity() {
             true
 
         }
+        /*override fun onCreateOptionsMenu(menu: Menu): Boolean{
+
+            menuInflater.inflate(R.menu.search_restaurants, menu)
+            val menuItem = menu!!.findItem(R.id.search)
+
+            if(menuItem != null){
+                val searchView = menuItem.actionView as SearchView
+
+                searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+                    override fun onQueryTextSubmit(query: String?): Boolean {
+                        return true
+                    }
+
+                    override fun onQueryTextChange(newText: String?): Boolean {
+                        if(newText!!.isNotEmpty()){
+                            displ
+                        }
+
+
+
+                        return true
+                    }
+
+
+                })
+            }
+
+            return super.onCreateOptionsMenu(menu)
+        }
+
+        override fun onOptionsItemSelected(item: MenuItem): Boolean{
+
+
+            return super.onOptionsItemSelected(item)
+        }*/
 
     }
 }

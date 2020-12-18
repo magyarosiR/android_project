@@ -1,5 +1,7 @@
 package rol.myappcompany.android_project.restaurants
 
+import android.view.Menu
+import android.view.MenuItem
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -66,5 +68,9 @@ class RestaurantsViewModel: ViewModel() {
     fun displayPropertyDetailsComplete() {
         _navigateToSelectedProperty.value = null
     }
+
+
+
+
 }
 
