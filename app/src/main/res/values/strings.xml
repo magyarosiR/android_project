@@ -15,5 +15,7 @@
     <string name="sub_name">Sub name</string>
     <string name="adress">Adress</string>
     <string name="todo">TODO</string>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="next"><![CDATA[->]]></string>
 
 </resources>
