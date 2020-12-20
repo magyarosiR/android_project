@@ -58,11 +58,11 @@ class ProfileFragment : Fragment() {
             profileResuls.append("You don't have any data yet. \n\n Please update your profile!")
         }
 
-        imgButton.setOnClickListener({
+        imgButton.setOnClickListener(){
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, 456)
-        })
+        }
         return view
 
     }

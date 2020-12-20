@@ -4,14 +4,10 @@ package rol.myappcompany.android_project
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import rol.myappcompany.android_project.model.Restaurants
 import rol.myappcompany.android_project.profile.ProfileFragment
 import rol.myappcompany.android_project.restaurants.RestaurantsFragment
 
@@ -19,7 +15,6 @@ import rol.myappcompany.android_project.restaurants.RestaurantsFragment
 class MainActivity : AppCompatActivity() {
 
     lateinit var profileFragment: ProfileFragment
-    lateinit var restaurantsFragment: RestaurantsFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavitagion: BottomNavigationView = findViewById(R.id.btm_nav)
 
-
-        val arrayList = ArrayList<List<Restaurants>>()
-
-        Log.d("ASD", arrayList.toString())
 
         bottomNavitagion.setOnNavigationItemSelectedListener { item ->
             when (item.itemId){

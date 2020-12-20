@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.widget.Toast
 import rol.myappcompany.android_project.profile.Profile
 
- val DATABASE_NAME = "ProfileDB"
+val DATABASE_NAME = "ProfileDB"
 val TABLE_NAME = "Profiles"
 val COL_NAME = "name"
 val COL_ADRESS = "adress"
@@ -51,14 +51,14 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
     }
 
      fun readData() : MutableList<Profile>{
-         var list : MutableList<Profile> = ArrayList()
+         val list : MutableList<Profile> = ArrayList()
 
          val db = this.readableDatabase
          val query = "SELECT * FROM " + TABLE_NAME
          val result = db.rawQuery(query,null)
          if(result.moveToFirst()){
              do {
-                 var profile = Profile()
+                 val profile = Profile()
                  profile.id = result.getString(result.getColumnIndex(COL_ID)).toInt()
                  profile.name = result.getString(result.getColumnIndex(COL_NAME))
                  profile.adress = result.getString(result.getColumnIndex(COL_ADRESS))

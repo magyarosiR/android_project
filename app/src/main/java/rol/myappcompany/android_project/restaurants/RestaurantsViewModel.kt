@@ -1,7 +1,5 @@
 package rol.myappcompany.android_project.restaurants
 
-import android.view.Menu
-import android.view.MenuItem
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,6 +22,7 @@ class RestaurantsViewModel: ViewModel() {
     val properties: LiveData<List<Restaurants>>
     get() = _properties
 
+
     private val _navigateToSelectedProperty = MutableLiveData<Restaurants>()
 
     val navigateToSelectedProperty: LiveData<Restaurants>
@@ -31,6 +30,7 @@ class RestaurantsViewModel: ViewModel() {
 
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main )
+
 
 
     init{
@@ -68,9 +68,6 @@ class RestaurantsViewModel: ViewModel() {
     fun displayPropertyDetailsComplete() {
         _navigateToSelectedProperty.value = null
     }
-
-
-
 
 }
 

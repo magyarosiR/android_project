@@ -29,6 +29,7 @@ interface ApiService{
     @GET("restaurants")
     fun getProperties():
             Deferred<Reqres> //Deferred is a coroutine job than can directly return a result / Call helyett
+    fun getRestaurants(@Query("country")state: String, @Query("per_page")per_page: Int, @Query("page")current_page: Int): Call<List<Restaurants>>
 
                             //Coroutine: Sok ideig tarto feladatoknal hasznaljuk, hogy a fő szálat ne terhelje
 
