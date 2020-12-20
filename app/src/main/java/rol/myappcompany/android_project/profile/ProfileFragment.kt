@@ -9,15 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import rol.myappcompany.android_project.profile.DataBaseHandler
 import rol.myappcompany.android_project.R
 import rol.myappcompany.android_project.favorites.FDataBaseHandler
 
 
 class ProfileFragment : Fragment() {
-
-    //lateinit var dataPic: Uri
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,6 +38,7 @@ class ProfileFragment : Fragment() {
             }
         }
 
+
         if (favoriteResults.text == "") {
             favoriteResults.append("You don't have any item on your favorite list yet!")
         }
@@ -57,7 +54,6 @@ class ProfileFragment : Fragment() {
 
         var db = context?.let { DataBaseHandler(context = it) }
 
-        //read the data to the profile screen
         var data = db?.readData()
         profileResuls.text = ""
         val profilePicture = view!!.findViewById<ImageView>(R.id.profile_picture)

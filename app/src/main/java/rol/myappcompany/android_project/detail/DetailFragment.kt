@@ -10,16 +10,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.fragment_detail.*
-import rol.myappcompany.android_project.R
 import rol.myappcompany.android_project.databinding.FragmentDetailBinding
 import rol.myappcompany.android_project.favorites.FDataBaseHandler
 import rol.myappcompany.android_project.favorites.Favorites
-import rol.myappcompany.android_project.model.Restaurants
 
 class DetailFragment : Fragment() {
     @SuppressLint("SetTextI18n")
@@ -83,7 +80,8 @@ class DetailFragment : Fragment() {
 
                 val newFavorite = Favorites(
                         rest.id,
-                        rest.name
+                        rest.name,
+                        rest.ImgSrcUrl
                 )
 
                 db?.insertDataFavorites(newFavorite)
@@ -101,13 +99,8 @@ class DetailFragment : Fragment() {
                 reload()
 
             }
-
-
-
         }
-
         return binding.root
     }
-
 
 }

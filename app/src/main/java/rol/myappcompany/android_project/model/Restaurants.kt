@@ -1,6 +1,5 @@
 package rol.myappcompany.android_project.model
 
-import android.os.Parcel
 import android.os.Parcelable
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize

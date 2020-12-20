@@ -3,22 +3,22 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.widget.Toast
 
 val DATABASE_NAME = "FavoritesDataBase"
 val TABLE_NAME = "Favorites"
 val COL_FID = "fid"
 val COL_ID = "id"
 val COL_NAME = "name"
+val COL_IMAGE = "ImgSrcUrl"
 
 class FDataBaseHandler(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, 1){ //NULL VALUE IS THE CURSOR FACTORY
 
     override fun onCreate(db: SQLiteDatabase?) {
-        //letrehozashoz szukseges sql parancs
         val createTable = "CREATE TABLE " + TABLE_NAME +" (" +
                 COL_FID +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_ID +" INTEGER ," +
-                COL_NAME + " TEXT)"
+                COL_NAME + " TEXT, " +
+                COL_IMAGE + " TEXT)"
 
         db?.execSQL(createTable)
     }
@@ -32,6 +32,7 @@ class FDataBaseHandler(val context: Context) : SQLiteOpenHelper(context, DATABAS
         val cv = ContentValues()
         cv.put(COL_ID, favorites.id)
         cv.put(COL_NAME, favorites.name)
+        //cv.put(COL_IMAGE, favorites.ImgSrcUrl)
 
 
         val  result =  db?.insert(TABLE_NAME, null, cv) //insert to the DB
@@ -51,6 +52,7 @@ class FDataBaseHandler(val context: Context) : SQLiteOpenHelper(context, DATABAS
                 val favorites = Favorites()
                 favorites.id = result.getString(result.getColumnIndex(COL_ID)).toInt()
                 favorites.name = result.getString(result.getColumnIndex(COL_NAME))
+                //favorites.ImgSrcUrl = result.getString(result.getColumnIndex(COL_IMAGE))
 
                 list.add(favorites)
             }while (result.moveToNext())
