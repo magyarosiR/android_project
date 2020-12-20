@@ -64,8 +64,8 @@ class ProfileFragment : Fragment() {
 
         if (data != null) {
             for (i in 0..(data.size - 1)) {
-                profileResuls.append("\nName: " + data.get(i).name + "\n\nAdress: "
-                        + data.get(i).adress + "\n\nPhone Number:  " + data.get(i).phone_number + "\n\nEmail:  " + data.get(i).email + '\n')
+                profileResuls.append("\nName: " + data.get(i).name + "\nAdress: "
+                        + data.get(i).adress + "\nPhone Number:  " + data.get(i).phone_number + "\nEmail:  " + data.get(i).email + '\n')
                     var imgUri = Uri.parse(data.get(i).img)
                     profilePicture!!.setImageURI(imgUri)
 
